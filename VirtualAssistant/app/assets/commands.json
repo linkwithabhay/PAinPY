@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "longest": 6
+  },
+  "commands": {
+    "0": {
+      "name": "create",
+      "des": "Create a new File"
+    },
+    "1": {
+      "name": "dev",
+      "des": "Start a preffered development"
+    },
+    "2": {
+      "name": "rs",
+      "des": "Restart the Assistant program"
+    },
+    "3": {
+      "name": "close",
+      "des": "Shutdown your Assistant"
+    },
+    "4": {
+      "name": "help",
+      "des": "Show the list of commands known to your Assistant"
+    }
+  }
+}

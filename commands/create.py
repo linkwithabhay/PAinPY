@@ -1,5 +1,5 @@
 from os import error, path, getcwd
-from decorate import terminal, align
+from manipulate import terminal, align
 
 def file(errMsg: str = "", dir: str = ""):
   if errMsg: print(align.right(errMsg))

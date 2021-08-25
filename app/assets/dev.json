@@ -1,0 +1,35 @@
+{
+  "last": 0,
+  "1": {
+    "name": "ToDo App",
+    "commands": [
+      "start chrome -incognito http://localhost:3000",
+      [
+        "cd C:/Web Dev/Github/ToDo App/todo-app-server & code .",
+        "C:/Web Dev/Github/ToDo App/todo-app-server"
+      ],
+      [
+        "cd C:/Web Dev/Github/ToDo App/todo-app-client & code .",
+        "C:/Web Dev/Github/ToDo App/todo-app-client"
+      ]
+    ]
+  },
+  "2": {
+    "name": "PAinPY",
+    "commands": [
+      [
+        "cd C:\\Web Dev\\Github\\PAinPY & code .",
+        "C:\\Web Dev\\Github\\PAinPY"
+      ]
+    ]
+  },
+  "3": {
+    "name": "Postman Clone",
+    "commands": [
+      [
+        "cd C:\\Web Dev\\Github\\postman-clone & code .",
+        "C:\\Web Dev\\Github\\postman-clone"
+      ]
+    ]
+  }
+}

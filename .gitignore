@@ -128,8 +128,14 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Personal Files
+# Dev Files
 .DevTools/
+
+# User Personal Files
 user.json
+
+# Working on Files
 scheduler.py
 notifier.py
+dataType.py
+security.py

@@ -1,5 +1,5 @@
 from os import name, system
-from decorate import spacing
+from manipulate import spacing
 from time import sleep
 
 def clear():
@@ -13,7 +13,9 @@ def clear():
 
 def shutDown(code: int):
   clear()
-  spacing.giveSpace("vh", ["See you soon"],style=True ,fullPage=True)
+  if code == 1:
+    spacing.giveSpace("vh", ["Something is wrong. Please reinstall."],style=True ,fullPage=True)
+  else:
+    spacing.giveSpace("vh", ["See you soon"],style=True ,fullPage=True)
   sleep(3)
-  clear()
   exit(code)

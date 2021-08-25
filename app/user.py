@@ -1,11 +1,12 @@
-from decorate import terminal
+from Assistant import Assistant
+from manipulate import terminal
 from app import storage
 
 def askUserName():
   name = str(input("What do I call you: "))
   if not name:
     name = askUserName()
-  storage.setItem("name", name)
+  storage.setItem("user", ["data","name"], name)
   return name
 
 def askUserNickName():
@@ -15,7 +16,7 @@ def askUserNickName():
     name = askUserNickName()
   elif name == "yes":
     name = "Sensei"
-  storage.setItem("nickname", name)
+  storage.setItem("user", ["data","nickname"], name)
   return name
 
 def preferNickName(count: int = 0):
@@ -30,7 +31,7 @@ def preferNickName(count: int = 0):
     prefer = False
   else:
     preferNickName(count + 1)
-  storage.setItem("preferNickname", prefer)
+  storage.setItem("user", ["settings","preferNickname"], prefer)
   return prefer
 
 
@@ -41,3 +42,20 @@ def askMoreAboutUser():
     askUserNickName()
   else:
     print("OK, I will call you by your real name")
+
+#$ ====================== Show =========================
+
+def showProfile():
+  terminal.clear()
+  user = storage.getItem("user")
+  for key, value in user.items():
+    print(key, ":", value)
+  
+  edit = str(input("To edit these settings, type 'edit' or to go back, type 'back': "))
+  if edit == "edit":
+    # Do editting
+    pass
+  elif edit == "back":
+    Assistant()
+  else:
+    showProfile()

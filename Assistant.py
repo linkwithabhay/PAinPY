@@ -1,7 +1,6 @@
-from decorate import spacing, terminal
-from create import create
-from dev import dev
-from app import command, storage, user
+from manipulate import spacing, terminal
+from commands import create, dev
+from app import storage, user
 from time import sleep
 
 #$ ======================= Functions =======================
@@ -31,6 +30,8 @@ def Assistant():
     return start()
   elif what == "close":
     return terminal.shutDown(0)
+  elif what == "profile":
+    return user.showProfile()
   elif what == "":
     return Assistant()
   else:
@@ -41,7 +42,9 @@ def Assistant():
 #$ List of available commands
 def listOfCommands():
   terminal.clear()
-  commands = command.get()
+  commands = storage.getItem("commands")
+  if not commands:
+    return terminal.shutDown(1)
   print("-"*20, "Available Commands", "-"*20)
   spacing.giveSpace("v",Vspace=[0])
   longst = commands["meta"]["longest"]
@@ -54,11 +57,14 @@ def listOfCommands():
 #$ =================== Start from here ===================
 def start():
   firstTime = False
-  callByNickname = storage.getItem("preferNickname")
-  if callByNickname:
-    name = storage.getItem("nickname")
+  callByNickname = storage.getItem("user", ["settings","preferNickname"])
+  if callByNickname == None:
+    user.askMoreAboutUser()
+    start()
+  elif callByNickname is True:
+    name = storage.getItem("user", ["data","nickname"])
   else:
-    name = storage.getItem("name")
+    name = storage.getItem("user", ["data","name"])
   if not name:
     name = user.askUserName()
     firstTime = True

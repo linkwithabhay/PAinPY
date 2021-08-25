@@ -1,4 +1,4 @@
-from decorate import terminal
+from manipulate import terminal
 import os
 
 #$ Center the content

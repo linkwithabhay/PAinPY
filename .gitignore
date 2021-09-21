@@ -133,6 +133,7 @@ dmypy.json
 
 # User Personal Files
 user.json
+dev.json
 
 # Working on Files
 scheduler.py

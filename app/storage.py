@@ -1,6 +1,8 @@
 import json
+from manipulate import terminal
 
 def getItem(at: str, keys: list = []):
+  '''Get the reqiured item from the storage'''
   try:
     with open("app/assets/{}.json".format(at), "r") as f:
       data = json.loads(f.read())
@@ -17,7 +19,7 @@ def getItem(at: str, keys: list = []):
           return False
       return value
   except Exception:
-    return Exception
+    terminal.shutDown(1)
 
 def setItem(at: str, keys: list, value: str or dict):
   try:

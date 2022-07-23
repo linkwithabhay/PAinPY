@@ -1,6 +1,7 @@
 from manipulate import spacing, terminal
 from commands import create, dev
 from app import storage, user
+from app.voice_assistant import Voice_Assistant
 from time import sleep
 
 #$ ======================= Functions =======================
@@ -74,4 +75,5 @@ def start():
   Assistant()
 
 if __name__ == "__main__":
-  start()
+  # start()
+  Voice_Assistant()
